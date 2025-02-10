@@ -1,7 +1,13 @@
 {{ define "main" }}
+<blockquote>
+  <p>
   {{ .Content }}
-  {{ range site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+</p>
+  <footer>
+    {{ .Site.Params.authorName }}
+  </footer>
+</blockquote>
+
     {{ .Summary }}
   {{ end }}
 {{ end }}
