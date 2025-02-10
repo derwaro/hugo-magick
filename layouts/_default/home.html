@@ -8,6 +8,10 @@
   </footer>
 </blockquote>
 
+<h1>Latest Posts</h1>
+  {{ range first 3 ( where site.RegularPages "Type" "posts" )  }}
+    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
     {{ .Summary }}
   {{ end }}
+  <a href="/posts"><button>All Posts</button></a>
 {{ end }}
