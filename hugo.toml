@@ -4,6 +4,7 @@ title = 'My New Hugo Site'
 
 [params]
 bgCol = '#3F3B3C'
+authorName = "The Author"
 
 [[menus.main]]
 name = 'Home'
