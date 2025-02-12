@@ -2,9 +2,6 @@
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   {{ range .Pages }}
-    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-    {{ .Summary }}
-    <em><a href="{{ .RelPermalink }}">Read More</a></em>
-    <hr>
+  <p><a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} - {{ .LinkTitle }}</a></p>
   {{ end }}
 {{ end }}

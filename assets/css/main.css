@@ -10,3 +10,18 @@ footer {
   border-top: 1px solid #222;
   margin-top: 1rem;
 }
+
+.post-link {
+  text-decoration: none;
+}
+
+.post-link::before {
+  content: '❯ ';
+  opacity: 0;
+  
+}
+
+.post-link:hover::before {
+  opacity: 1; 
+  
+}

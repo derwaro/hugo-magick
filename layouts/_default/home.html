@@ -10,8 +10,7 @@
 
 <h1>Latest Posts</h1>
   {{ range first 3 ( where site.RegularPages "Type" "posts" )  }}
-    <h3><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
-    {{ .Summary }}
+  <p><a href="{{ .RelPermalink }}">{{ .Date.Format "2006-01-02" }} - {{ .LinkTitle }}</a></p>
   {{ end }}
-  <a href="/posts"><button>All Posts</button></a>
+  <button><a href="/posts" class="post-link">All Posts</button></a>
 {{ end }}
