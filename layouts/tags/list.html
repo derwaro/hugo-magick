@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>Tags</h1>
+  {{ .Content }}
+
+  <ul>
+    {{ range .Site.Taxonomies.tags.Alphabetical }}
+      <li>
+        <a href="{{ "/tags/" | relLangURL }}{{ .Name | urlize }}">
+          {{ .Name }} ({{ .Count }})
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
