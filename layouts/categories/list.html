@@ -1,0 +1,12 @@
+{{ define "main" }}
+  <h1>Categories</h1>
+  {{ .Content }}
+
+  <div class="category-container">
+    {{ range .Site.Taxonomies.categories.ByCount }}
+    
+    <button><a href="{{ "/categories/" | relLangURL }}{{ .Name | urlize }}" class="post-link">{{ .Name }} ({{ .Count }})</button></a>
+  
+    {{ end }}
+  </div>
+{{ end }}
