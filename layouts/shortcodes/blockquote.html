@@ -1,0 +1,11 @@
+<blockquote>
+    <p>{{ .Inner | markdownify }}</p>
+    {{ $footer := .Get "footer" }}
+    {{ $cite := .Get "cite" }}
+    {{ if or $footer $cite }}
+    <footer>
+        {{ if $footer }}{{ $footer }}{{ end }}
+        {{ if $cite }}<cite>{{ if $footer }}, {{ end }}{{ $cite }}</cite>{{ end }}
+    </footer>
+    {{ end }}
+</blockquote>
