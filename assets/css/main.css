@@ -1,9 +1,17 @@
-
-
 body {
   background-color: var(--backgroundColor);
 }
 
+:root {
+    /* Theme colors */
+    --fg: #faebd7;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --fg: #faebd7;
+    }
+}
 
 
 footer {
