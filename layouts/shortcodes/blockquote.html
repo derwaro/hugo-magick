@@ -5,7 +5,16 @@
     {{ if or $footer $cite }}
     <footer>
         {{ if $footer }}{{ $footer }}{{ end }}
-        {{ if $cite }}<cite>{{ if $footer }}, {{ end }}{{ $cite }}</cite>{{ end }}
+        {{ if $cite }}
+        <cite>
+            {{ if $footer }}, {{ end }}
+            {{ if or (hasPrefix $cite "http://") (hasPrefix $cite "https://") }}
+            <a href="{{ $cite }}" target="_blank" rel="noopener noreferrer">{{ $cite }}</a>
+            {{ else }}
+            {{ $cite | markdownify }}
+            {{ end }}
+        </cite>
+        {{ end }}
     </footer>
     {{ end }}
 </blockquote>
